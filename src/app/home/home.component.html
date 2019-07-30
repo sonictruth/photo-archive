@@ -1,0 +1,16 @@
+<ngb-alert *ngIf="error"
+           type="danger"
+           (close)="error = null"
+           [dismissible]="true">
+    <strong>Error</strong> {{error}}
+</ngb-alert>
+
+<div *ngIf="albums">
+    <div *ngFor="let album of albums">
+        <a [routerLink]="['/album', album.id]"
+           routerLinkActive="active">
+           {{ album.title }}
+           <img [src]="album.coverUrl">
+        </a>
+    </div>
+</div>
