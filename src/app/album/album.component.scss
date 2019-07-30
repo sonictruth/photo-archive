@@ -1,0 +1,21 @@
+
+.masonry {
+    column-count: 3;
+    column-gap: 10px;
+    margin: 20px;
+}
+
+.masonry-brick {
+    background-color: #eee;
+    display: inline-block;
+    margin: 0 0 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: 5px solid Black;
+}
+
+@media (max-width: 900px) {
+    .masonry {
+        column-count: 1;
+    }
+}

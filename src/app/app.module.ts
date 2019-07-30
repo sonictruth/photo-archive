@@ -12,6 +12,7 @@ import { AlbumComponent } from './album/album.component';
 import { AboutComponent } from './about/about.component';
 import { LoaderService } from './loader.service';
 import { LoaderInterceptor } from './loader.interceptor';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { LoaderInterceptor } from './loader.interceptor';
     AboutComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

@@ -1,5 +1,21 @@
-<ngb-alert *ngIf="error" type="danger" (close)="error = null" [dismissible]="true">
+<ngb-alert *ngIf="error"
+           type="danger"
+           (close)="error = null"
+           [dismissible]="true">
     <strong>Error</strong> {{error}}
 </ngb-alert>
 
-<p>album works!</p>
+<div class="nicefont text-center"
+     *ngIf="!photos">
+    Loading photos...
+</div>
+<div id="lightgallery"
+     class="masonry"
+     *ngIf="photos">
+    <a [href]="photo.baseUrl + '=w4000-h4000'"
+       *ngFor="let photo of photos">
+        <img
+             class="masonry-brick round"
+             [src]="photo.baseUrl">
+    </a>
+</div>

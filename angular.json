@@ -28,9 +28,20 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/lightgallery/dist/css/lg-fb-comment-box.min.css",
+              "./node_modules/lightgallery/dist/css/lightgallery.min.css",
+              "./node_modules/lightgallery/dist/css/lg-transitions.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/jquery-mousewheel/jquery.mousewheel.js",
+              "./node_modules/lightgallery/dist/js/lightgallery.min.js",
+              "./node_modules/lg-autoplay/dist/lg-autoplay.min.js",
+              "./node_modules/lg-fullscreen/dist/lg-fullscreen.min.js",
+              "./node_modules/lg-pager/dist/lg-pager.min.js",
+              "./node_modules/lg-zoom/dist/lg-zoom.min.js"
+            ]
           },
           "configurations": {
             "production": {

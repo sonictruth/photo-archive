@@ -5,12 +5,40 @@
     <strong>Error</strong> {{error}}
 </ngb-alert>
 
+
+<div class="nicefont text-center" *ngIf="!albums">
+    Loading albums...
+</div>
 <div *ngIf="albums">
-    <div *ngFor="let album of albums">
-        <a [routerLink]="['/album', album.id]"
-           routerLinkActive="active">
-           {{ album.title }}
-           <img [src]="album.coverUrl">
-        </a>
+    {{model}}
+    <input placeholder="Search for Album"
+           type="text"
+           class="form-control search-album"
+           [(ngModel)]="filterTerm"
+           [ngbTypeahead]="search" />
+    <hr>
+
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <div class="col-lg-4 album-container"
+                 [routerLink]="['/album', album.id]"
+                 *ngFor="let album of filter(albums)">
+                <div [title]="album.title"
+                     class="album-img"
+                     [ngStyle]="{'background-image': 'url('+album.coverUrl+')'}">
+                    <a class="album-title nicefont"
+                       [routerLink]="['/album', album.id]"
+                       routerLinkActive="active">
+                        {{ album.title }}
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
     </div>
+
 </div>

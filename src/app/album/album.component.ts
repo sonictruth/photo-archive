@@ -25,6 +25,12 @@ export class AlbumComponent implements OnInit, OnDestroy {
         this.http.get(url, { params }).subscribe(
           (albums) => {
             this.photos = albums;
+            setTimeout( () => {
+              // tslint:disable-next-line:no-string-literal
+              window['jQuery']('#lightgallery').lightGallery({
+                hideBarsDelay: 1000
+              });
+            }, 10);
           },
           error => this.error = 'Communication error'
         );
