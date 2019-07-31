@@ -31,7 +31,8 @@
               "src/styles.scss",
               "./node_modules/lightgallery/dist/css/lg-fb-comment-box.min.css",
               "./node_modules/lightgallery/dist/css/lightgallery.min.css",
-              "./node_modules/lightgallery/dist/css/lg-transitions.min.css"
+              "./node_modules/lightgallery/dist/css/lg-transitions.min.css",
+              "./node_modules/animate.css/animate.min.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",

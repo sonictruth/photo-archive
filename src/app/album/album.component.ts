@@ -12,6 +12,7 @@ export class AlbumComponent implements OnInit, OnDestroy {
   private sub: any;
   error = null;
   photos = null;
+  $lg: any = null;
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient
@@ -27,7 +28,8 @@ export class AlbumComponent implements OnInit, OnDestroy {
             this.photos = albums;
             setTimeout( () => {
               // tslint:disable-next-line:no-string-literal
-              window['jQuery']('#lightgallery').lightGallery({
+              this.$lg = window['jQuery']('#lightgallery');
+              this.$lg.lightGallery({
                 hideBarsDelay: 1000
               });
             }, 10);
@@ -42,6 +44,8 @@ export class AlbumComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.$lg.lightGallery('destroy')
+    this.$lg.data('lightGallery').destroy(true);
     this.sub.unsubscribe();
   }
 }
