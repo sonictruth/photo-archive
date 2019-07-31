@@ -10,19 +10,25 @@
     background-size: cover;
     margin-bottom: 20px;
     border-radius: 10px;
-    border: 5px solid Black;
 }
 .album-title {
     color: white;
     text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    4px 2px 11px #000000;
 }
 .search-album {
-    position: absolute;
-    top: 20px;
-    width: 200px;
-    right: 20px;
+    background-color: gray;
+    position: block;
+    margin: 20px;
+    width: 400px;
+}
+
+@media only screen and (min-width: 900px)  {
+    .search-album {
+        margin: 20px;
+        position: absolute;
+        top: 0px;
+        width: 200px;
+        right: 0px;
+    }
 }

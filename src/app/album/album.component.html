@@ -5,17 +5,17 @@
     <strong>Error</strong> {{error}}
 </ngb-alert>
 
-<div class="nicefont text-center animated bounce infinite"
+<div class="nicefont text-center animated flash infinite"
      *ngIf="!photos">
     Loading photos...
 </div>
-<div id="lightgallery"
-     class="masonry"
-     *ngIf="photos">
-    <a [href]="photo.baseUrl + '=w4000-h4000'"
-       *ngFor="let photo of photos">
-        <img
-             class="masonry-brick round"
-             [src]="photo.baseUrl">
-    </a>
-</div>
+<section id="lightgallery" class="animated fadeIn"
+         *ngIf="photos">
+
+    <div [ngStyle]="{ 'width': photo.meta.w*200/photo.meta.h + 'px', 'flex-grow':photo.meta.w*200/photo.meta.h }"
+         [attr.data-src]="photo.baseUrl + '=w4000-h4000'"
+         *ngFor="let photo of photos">
+        <i [ngStyle]="{ 'padding-bottom': photo.meta.h/photo.meta.w*100 + '%' }"></i>
+        <a [href]="photo.baseUrl + '=w4000-h4000'"><img [src]="photo.baseUrl"></a>
+    </div>
+</section>

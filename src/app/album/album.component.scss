@@ -1,21 +1,27 @@
+#lightgallery {
+    display: flex;
+    flex-wrap: wrap;
 
-.masonry {
-    column-count: 3;
-    column-gap: 10px;
-    margin: 20px;
-}
-
-.masonry-brick {
-    background-color: #eee;
-    display: inline-block;
-    margin: 0 0 10px;
-    width: 100%;
-    border-radius: 10px;
-    border: 5px solid Black;
-}
-
-@media (max-width: 900px) {
-    .masonry {
-        column-count: 1;
+    div {
+        cursor: pointer;
+        margin: 2px;
+        background-color: gray;
+        position: relative;
     }
+
+    i {
+        display: block;
+    }
+
+    img {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        vertical-align: bottom;
+    }
+}
+
+#lightgallery::after {
+    content: '';
+    flex-grow: 999999999;
 }
